@@ -1,4 +1,4 @@
-# Sprinboot-template
+# Microservice-template
 Boilerplate for initial microservice development.
 
 * SpringBootServletInitializer
@@ -7,4 +7,5 @@ Boilerplate for initial microservice development.
 * Spring Data JPA Specifications
 * PostgreSQL
 * Swagger
-* Eureka (pending)
+* Eureka
+* Log4J 2
