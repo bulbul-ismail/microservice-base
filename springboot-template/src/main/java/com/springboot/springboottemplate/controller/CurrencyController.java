@@ -13,9 +13,13 @@ import com.springboot.springboottemplate.service.CurrencyService;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 @RestController
 public class CurrencyController {
+
+	private final Logger logger = LogManager.getLogger();
 
 	private CurrencyService currencyService;
 
@@ -29,10 +33,9 @@ public class CurrencyController {
 	@ApiOperation("Returns Currency data with given CODE parameter.")
 	@ApiImplicitParams({
 			@ApiImplicitParam(name = "code", value = "Currency's code", required = false, dataType = "string", paramType = "query"), })
-	public List<Currency> currencies(
+	public List<Currency> filterByCode(@RequestParam(value = "code", required = false) Optional<String> code) {
 
-			@RequestParam(value = "code", required = false) Optional<String> code) {
-
+		logger.info(String.format("Currency.filterByCode(%s)", code));
 		return currencyService.findWithCode(code);
 	}
 }
