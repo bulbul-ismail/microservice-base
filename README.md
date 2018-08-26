@@ -8,4 +8,5 @@ Boilerplate for initial microservice development.
 * PostgreSQL
 * Swagger
 * Eureka
+* Zuul
 * Log4J 2
